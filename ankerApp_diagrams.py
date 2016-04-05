@@ -3,10 +3,10 @@
 
 # 0.93 tabellen für notwendige kettenlängen nach tiefen und windgeschwindigkeiten
 # 0.92  sechste Tabelle hinzugefügt (ankergewicht für haltekoeffizienten und windgeschwindigkeiten)
+# 0.91 - make two programs, one for the special case, one for the diagrams
 
 # rodeanch part 2 - diagrams
 
-# rodeanch 0.91 - make two programs, one for the special case, one for the diagrams
 
 import math
 import pylab
@@ -19,6 +19,7 @@ print('Selbst wenn ausreichend Kette zur Verfügung steht sollte also eine wenig
 print('Die Berechnung geht davon aus, dass der Winkel der Kette am Anker bis zu fünf Grad (gegenüber der Horizontalen) betragen kann.')
 print('Die gesamte Mathematik wurde aus einer Excel-Tabelle von Alain Fraysse (http://alain.fraysse.free.fr) übernommen.')
 print('Disclaimer: Die berechneten Diagramme basieren auf theoretischen Annahmen und können höchstens bei einer Einschätzung helfen, sind aber keine zuverlässigen Vorgaben für spezifische Situationen!')
+print('Die berechneten Werte gelten nur für Monohulls. Das originale Excel-Sheet von Alain Fraysse ermöglicht aber auch die Berechnung von Geschirrlängen für Multihulls.')
 print('')
 print('Die erste Tabelle zeigt die nötige Geschirrlänge für Tiefen von 4-10 Metern. Die Tiefe setzt sich zusammen aus Wassertiefe und Freibord! ')
 print('Bei einer Wassertiefe von 7 Metern und einem Freibord von 1 Meter wäre also der Wert für eine Tiefe von 8 Metern ausschlaggebend.')
@@ -27,7 +28,7 @@ print('Die dritte Tabelle zeigt die theoretische Last auf dem Ankergeschirr, die
 print('Die vierte und fünfte Tabelle zeigen Vergleichswerte für verschiedene Bootslängen und dienen eher einer Einschätzung der Berechnungsgrundlage als')
 print('dem praktischen Nutzen an Bord.')
 print('Die sechste Tabelle zeigt das minimale Ankergewicht bei einer optimalen Zugrichtung (max. 5 Grad) der Kette am Anker für verschiedene Windgeschwindigkeiten')
-print('und verschiedene Haltekoeffizienten des Ankergrunds (exzellent bis schlechter Ankergrund).')
+print('und verschiedene Haltekoeffizienten des Ankergrunds (exzellent bis schlechter Ankergrund). Die Tabelle gilt nur für Anker mit einer High Holding Power (z.B. Delta, Rocna, Spade, Bügel). Klassische Anker müssen für die gleiche Haltekraft etwa 30 Prozent schwerer gewählt werden.')
 print('')
 print('Bitte geben Sie jetzt die Schiffsdaten ein.')
 print('')
@@ -63,7 +64,7 @@ seabedHoldingNames = {4:"schlecht", 3:"maessig", 2:"gut", 1:"excellent"}
 p1 = 0.02385 * (chainDiameter**2)
 
 # constants
-massPower = 1.4 # wird im xls-sheet leider nicht weiter erklärt, ich denke an massenträgheitskoeffizient
+massPower = 1.4 # wird im xls-sheet von Alain Fraysse leider nicht weiter erklärt, ich denke an massenträgheitskoeffizient
 K = 0.003
 p = 1.66 # K und p sind Konstanten, unterschiedlich für Katamarane und Monohulls, hier sind die Werte für Monohulls festgelegt)
 
@@ -373,12 +374,6 @@ pylab.show()
 
 ########################################################################################
 
-
-
-
-
-
-
 # plot the static and dynamic tension according to windspeed for a given boatlength
 
 # generate a list of windspeeds
@@ -450,6 +445,7 @@ pylab.grid()
 pylab.show()
     
 
+#################################################################################################
     
 # für jeden windspeed eine liste mit minimal anchor weights machen (für jedes seabed eine zahl)
 # compute a list with the minimal anchor weight for each seabed for a given windspeed
