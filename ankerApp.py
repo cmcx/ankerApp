@@ -14,9 +14,9 @@ import pylab
 # Introduction
 
 print('Guten Tag. Dieses Programm kann Ihnen helfen, das richtige Ankergeschirr für eine bestimmte Windsituation auszuwählen.')
-print('Dazu werden einige Daten abgefragt. Über Gleichungen, die Sie im Quellcode des Programms nachlesen können, werden dann Empfehlungen für drei Szenarios ausgegeben.')
+print('Dazu werden einige Daten abgefragt. Über Gleichungen, die Sie im Quellcode des Programms nachlesen können, werden dann Empfehlungen für drei Szenarien ausgegeben.')
 #print('Schließlich gibt das Programm einige Grafiken aus, die eine Übersicht über Lasten und Leinenlängen bei verschiedenen Windstärken liefern.')
-print('Disclaimer: Die Empfehlungen des Programms basieren auf den Formeln von Alain Fraysse (http://alain.fraysse.free.fr) und das heißt auf theoretischen Überlegungen. Sie können bestenfalls Anhaltspunkte sein und ersetzen KEIN Assessment einer je individuellen Situation!')
+print('Disclaimer: Die Empfehlungen des Programms basieren auf den Formeln von Alain Fraysse (http://alain.fraysse.free.fr) und das heißt auf theoretischen Überlegungen. Sie können bestenfalls eine Hilfestellung sein und ersetzen NICHT ein Assessment der konkreten Situation durch den Schiffsführer oder die Schiffsführerin!')
 print('')
 print('Bitte geben Sie jetzt Ihre Daten ein und bestätigen Sie die Eingabe jeweils mit der Entertaste.')
 
