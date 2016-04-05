@@ -20,6 +20,7 @@ print('Disclaimer: Die Empfehlungen des Programms basieren auf den Formeln von A
 print('')
 print('Bitte geben Sie jetzt Ihre Daten ein und bestätigen Sie die Eingabe jeweils mit der Entertaste.')
 
+
 # Variables
 boatLength = float(raw_input('Bootslänge (Meter): '))
 chainLength = float(raw_input('Länge der Ankerkette (Meter): '))
